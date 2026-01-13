@@ -26,13 +26,13 @@ jobs:
           cd app
           flutter pub get
 
-      - name: Build App Bundle
+      - name: Build APK
         run: |
            cd app
-           flutter build appbundle
+           flutter build apk --release
 
-      - name: Upload AAB
+      - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: app-release
-          path: app/build/app/outputs/bundle/release/app-release.aab
+          path: app/build/app/outputs/flutter-apk/app-release.apk
